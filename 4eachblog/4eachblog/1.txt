@@ -1,0 +1,11 @@
+.side1{
+   float: right;
+    font-size: 40px;
+    
+}
+.side1 ul li{
+    list-style: none;   
+}
+.side1 h2{
+    border-bottom: 2px dotted black;
+}
