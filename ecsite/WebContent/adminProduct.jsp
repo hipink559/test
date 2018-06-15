@@ -6,7 +6,7 @@ pageEncoding="UTF-8"%>
 <head>
 
 <meta charset="utf-8" />
-<title>ChangeProduct</title>
+<title>商品情報編集画面</title>
 	<style type="text/css">
 
 	body {
@@ -38,21 +38,32 @@ pageEncoding="UTF-8"%>
 		height: 500px;
 		text-align: center;
 	}
+
 	#before{
-	    width:3000px;
+	    float:left;
+	    width:350px;
 		margin:30px auto;
 		border:1px solid #333;
+		position:relative;
+		left:100px;
 	}
 	#after{
-	    width:300px;
+	    float:left;
+	    width:350px;
 		margin:30px auto;
 		border:1px solid #333;
+		position:relative;
+		left:170px;
 	}
 	#footer {
 		width: 100%;
 		height: 80px;
 		background-color: black;
 		clear:both;
+	}
+	#submain{
+		width: 100%;
+		text-align: center;
 	}
 </style>
 
@@ -65,12 +76,13 @@ pageEncoding="UTF-8"%>
 
 <div id="main">
 	<div id="top">
-	<p>Change Produce</p>
+	<p>Change Product</p>
 	</div>
-<div>
+
+<div id="before">
 	<s:form action="BuyItemAction">
+	<h3>変更前</h3>
 	<table>
-	<div id="before">
 	<tr>
 		<td><span>商品名</span></td>
 		<td><s:property value="session.buyItem_name" /></td>
@@ -84,48 +96,47 @@ pageEncoding="UTF-8"%>
 
 	<tr>
 		<td><span>在庫</span></td>
-		<td><select name="stock">
-				<option value="1" selected="selected">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-		</select></td>
-	</tr>
-	</div>
+		<td>
 
-	<div id="after">
-	<tr>
-		<td><span>商品名</span></td>
-		<td><s:property value="session.buyItem_name" /></td>
+		</td>
 	</tr>
-
-	<tr>
-		<td><span>値段</span></td>
-		<td><s:property value="session.buyItem_price"/>
-		<span>円</span></td>
-	</tr>
-
-	<tr>
-		<td><span>在庫</span></td>
-		<td><select name="stock">
-				<option value="1" selected="selected">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-		</select></td>
-	</tr>
-	</div>
-
 		</table>
 	</s:form>
-	<div>
+
+</div>
+
+<div id="after">
+	<s:form action="BuyItemAction">
+	<h3>変更後</h3>
+	<table>
+	<tr>
+		<td><span>商品名</span></td>
+		<td><s:property value="session.buyItem_name" /></td>
+	</tr>
+
+	<tr>
+		<td><span>値段</span></td>
+		<td><s:property value="session.buyItem_price"/>
+		<span>円</span></td>
+	</tr>
+
+	<tr>
+		<td><span>在庫</span></td>
+		<td>
+
+		</td>
+	</tr>
+		</table>
+	</s:form>
+
+</div>
+</div>
+	<div id="submain" >
 	<p>前画面に戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
 	<p>マイぺージは<a href='<s:url action="MyPageAction" />'>こちら</a></p>
 	</div>
-</div>
-</div>
+
+
 <div id="footer">
 	<div id="pr">
 	</div>

@@ -19,7 +19,7 @@ pageEncoding="UTF-8"%>
 		color:#333;
 		background:#fff;
 	}
-	table {
+	#table {
 		text-align:center;
 		margin:0 auto;
 	}
