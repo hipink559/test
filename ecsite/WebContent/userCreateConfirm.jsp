@@ -73,7 +73,7 @@ pageEncoding="UTF-8"%>
 		</tr>
 
 		<tr>
-		<td><s:submit value="finish"/></td>
+		<td><s:submit value="登録"/></td>
 		</tr>
 
 	</s:form>

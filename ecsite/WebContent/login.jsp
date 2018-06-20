@@ -75,8 +75,7 @@
 		<a href='<s:url action="UserCreateAction" />'>こちら</a></p>
 		<p>Homeへ戻る場合は
 		<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
-		<p>管理者ページへは
-		<a href='<s:url action="PassadminAction" />'>こちら</a></p>
+
 	</div>
 	</div>
 	</div>

@@ -78,9 +78,10 @@ pageEncoding="UTF-8"%>
 	<div id="top">
 	<p>Change Product</p>
 	</div>
+	<h2>商品情報の追加は<a href='<s:url action="AddProductAction" />'>こちら</a></h2>
 
 <div id="before">
-	<s:form action="BuyItemAction">
+	<s:form action="ChangeProductAction">
 	<h3>変更前</h3>
 	<table>
 	<tr>
@@ -96,9 +97,8 @@ pageEncoding="UTF-8"%>
 
 	<tr>
 		<td><span>在庫</span></td>
-		<td>
-
-		</td>
+		<td><s:property value="session.buyItem_stock"/>
+		<span>個</span></td>
 	</tr>
 		</table>
 	</s:form>
@@ -106,7 +106,7 @@ pageEncoding="UTF-8"%>
 </div>
 
 <div id="after">
-	<s:form action="BuyItemAction">
+	<s:form action="ChangeProductAction">
 	<h3>変更後</h3>
 	<table>
 	<tr>
@@ -122,18 +122,18 @@ pageEncoding="UTF-8"%>
 
 	<tr>
 		<td><span>在庫</span></td>
-		<td>
+		<td><s:property value="session.Item_stock"/>
+		<span>個</span></td>
 
-		</td>
 	</tr>
 		</table>
 	</s:form>
 
 </div>
+
 </div>
 	<div id="submain" >
-	<p>前画面に戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
-	<p>マイぺージは<a href='<s:url action="MyPageAction" />'>こちら</a></p>
+	<p>ホームに戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
 	</div>
 
 

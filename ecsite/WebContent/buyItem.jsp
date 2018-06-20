@@ -19,7 +19,7 @@ pageEncoding="UTF-8"%>
 		color:#333;
 		background:#fff;
 	}
-	#table {
+	table {
 		text-align:center;
 		margin:0 auto;
 	}
@@ -44,6 +44,11 @@ pageEncoding="UTF-8"%>
 		background-color: black;
 		clear:both;
 	}
+	#text-link {
+		display: inline-block;
+		text-align: right;
+	}
+
 </style>
 
 </head>
@@ -60,6 +65,7 @@ pageEncoding="UTF-8"%>
 <div>
 	<s:form action="BuyItemAction">
 	<table>
+
 	<tr>
 		<td><span>商品名</span></td>
 		<td><s:property value="session.buyItem_name" /></td>

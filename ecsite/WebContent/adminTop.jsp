@@ -60,11 +60,11 @@ pageEncoding="UTF-8"%>
 
 	<div>
 	<h3>商品に関する項目</h3>
-	<p>商品情報の編集は<a href='<s:url action="ChangeproductAction" />'>こちら</a></p>
+	<p>商品情報の編集は<a href='<s:url action="ChangeProductAction" />'>こちら</a></p>
 
 	<br>
 	<h3>ユーザーに関する項目</h3>
-	<p>ユーザー情報の編集は<a href='<s:url action="ChangeuserAction" />'>こちら</a></p>
+	<p>ユーザー情報の編集は<a href='<s:url action="ChangeUserAction" />'>こちら</a></p>
 
 	<br>
 	<p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a></p>

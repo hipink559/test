@@ -19,6 +19,7 @@
 <action name="LoginAction" class="com.internousdev.ecsite.action.LoginAction" method="execute">
 	<result name="success">buyItem.jsp</result>
 	<result name="error">login.jsp</result>
+	<result name="admin">adminTop.jsp</result>
 </action>
 
 <action name="UserCreateAction" class="com.internousdev.ecsite.action.UserCreateAction" method="execute">
@@ -52,13 +53,28 @@
 	<result name="success">home.jsp</result>
 </action>
 
+<action name="ChangeProductAction" class="com.internousdev.ecsite.action.ChangeProductAction" method="execute">
+	<result name="success">adminProduct.jsp</result>
+</action>
 
+<action name="ChangeUserAction" class="com.internousdev.ecsite.action.ChangeUserAction" method="execute">
+	<result name="success">adminUser.jsp</result>
+</action>
 
+<action name="AddProductAction" class="com.internousdev.ecsite.action.AddProductAction" method="execute">
+	<result name="success">addproduct.jsp</result>
+</action>
 
+<action name="AddProductConfirmAction" class="com.internousdev.ecsite.action.AddProductConfirmAction" method="execute">
+	<result name="success">addConfirm.jsp</result>
+</action>
 
-
-
+<action name="AddProductCompleteAction" class="com.internousdev.ecsite.action.AddProductCompleteAction" method="execute">
+	<result name="success">addComplete.jsp</result>
+</action>
 
 
 </package>
+
+
 </struts>

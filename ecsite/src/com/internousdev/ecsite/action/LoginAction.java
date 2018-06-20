@@ -1,12 +1,15 @@
 package com.internousdev.ecsite.action;
 
 import java.util.Map;
+
 import org.apache.struts2.interceptor.SessionAware;
+
 import com.internousdev.ecsite.dao.BuyItemDAO;
 import com.internousdev.ecsite.dao.LoginDAO;
 import com.internousdev.ecsite.dto.BuyItemDTO;
 import com.internousdev.ecsite.dto.LoginDTO;
 import com.opensymphony.xwork2.ActionSupport;
+
 
 public class LoginAction extends ActionSupport implements SessionAware{
 	private String loginUserId;
@@ -32,10 +35,14 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			session.put("buyItem_name", buyItemDTO.getItemName());
 			session.put("buyItem_price", buyItemDTO.getItemPrice());
 
-			return result;
-		}
-		return result;
+	if(session.get("login_user_id").equals("admin")) {
+		result="admin";
+
+		}return result;
+	}return result;
 	}
+
+
 	public String getLoginUserId() {
 		return loginUserId;
 	}
@@ -53,3 +60,4 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	}
 
 }
+

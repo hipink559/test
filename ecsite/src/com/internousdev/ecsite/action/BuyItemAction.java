@@ -1,7 +1,9 @@
 package com.internousdev.ecsite.action;
 
 import java.util.Map;
+
 import org.apache.struts2.interceptor.SessionAware;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyItemAction extends ActionSupport implements SessionAware{
@@ -23,7 +25,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 			payment="現金";
 			session.put("pay",payment);
 		}else{
-			payment = "クレカ";
+			payment = "CR";
 			session.put("pay", payment);
 		}
 			return result;
