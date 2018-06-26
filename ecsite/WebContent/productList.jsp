@@ -6,7 +6,7 @@ pageEncoding="UTF-8"%>
 <head>
 
 <meta charset="utf-8" />
-<title>管理者画面</title>
+<title>商品一覧画面</title>
 	<style type="text/css">
 
 	body {
@@ -44,6 +44,11 @@ pageEncoding="UTF-8"%>
 		background-color: black;
 		clear:both;
 	}
+	#text-link {
+		display: inline-block;
+		text-align: right;
+	}
+
 </style>
 
 </head>
@@ -55,23 +60,33 @@ pageEncoding="UTF-8"%>
 
 <div id="main">
 	<div id="top">
-	<p>Administrator Page</p>
+	<p>Item List</p>
 	</div>
+<div>
+	<s:form action="BuyItemAction">
+	<table>
+	<s:iterator value="#session.productInfoDtoList">
+<div class="product-list-box">
+<ul>
+	<li>
+	<s:url action="ProductDetailsAction">
+	</s:url>'><br>
+	<s:property value="itemName"/><br>
+	<s:property value="itemPrice"/>円<br>
+  </li>
+</ul>
+</div>
+</s:iterator>
 
+
+		</table>
+	</s:form>
 	<div>
-	<h3>商品に関する項目</h3>
-	<p>商品情報の編集は<a href='<s:url action="ChangeProductAction" />'>こちら</a></p>
-
-	<br>
-	<h3>ユーザーに関する項目</h3>
-	<p>ユーザー情報の編集は<a href='<s:url action="ChangeCostomerAction" />'>こちら</a></p>
-
-	<br>
-	<p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a></p>
-
+	<p>前画面に戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
+	<p>マイぺージは<a href='<s:url action="MyPageAction" />'>こちら</a></p>
 	</div>
 </div>
-
+</div>
 <div id="footer">
 	<div id="pr">
 	</div>
