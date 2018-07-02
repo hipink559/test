@@ -67,23 +67,31 @@
 				<th>商品名</th>
 				<th>価格</th>
 				<th>在庫数</th>
+				<th>編集</th>
+
 
 			</tr>
 
 			<s:iterator value="productList">
+
 				<tr>
 					<td><s:property value="id" /></td>
-					<td><s:property value="itemname" /><span></span></td>
-					<td><s:property value="itemprice" /><span>円</span></td>
-					<td><s:property value="itemstock" />個</td>
+					<td><s:property value="itemName" /><span></span></td>
+					<td><s:property value="itemPrice" /><span>円</span></td>
+					<td><s:property value="itemStock" />個</td>
+					<td>
+					    <a href='<s:url action="ChangeProductInfoAction">
+	                    <s:param name="id" value="%{id}"/>
+	                     </s:url>'>
+					    編集
+                      </a>
+	                  </td>
 
 				</tr>
+
 				</s:iterator>
 			</table>
-				<s:form action="ChangeProductConfirmAction">
-					<input type="hidden" name="deleteFlg" value="1">
-					<s:submit value="削除" method="delete" />
-				</s:form>
+
 		</s:elseif>
 		<s:if test="message != null">
 			<h3><s:property value="message"/></h3>

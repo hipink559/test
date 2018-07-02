@@ -8,37 +8,46 @@ import com.internousdev.ecsite.dao.ChangeProductCompleteDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ChangeProductCompleteAction extends ActionSupport implements SessionAware {
-	private String changeitemName;
-	private String changeitemPrice;
-	private String changeitemStock;
+	private String id;
+	private String itemName;
+	private String itemPrice;
+	private String itemStock;
 	public Map<String,Object> session;
+
 	private ChangeProductCompleteDAO changeProductCompleteDAO=new ChangeProductCompleteDAO();
 
 	public String execute()throws SQLException{
-		changeProductCompleteDAO.changeProduct(session.get("changeitemName").toString(),
-				session.get("changeitemPrice").toString(),
-				session.get("changeitemStock").toString());
+		changeProductCompleteDAO.updateProduct(
+				session.get(itemName).toString(),
+				session.get(itemPrice).toString(),
+				session.get(itemStock).toString());
 				String result=SUCCESS;
 				return result;
 	}
 
-	public String getChangeitemName() {
-		return changeitemName;
+	public String getId() {
+		return id;
 	}
-	public void setChangeitemName(String changeitemName) {
-	this.changeitemName = changeitemName;
+	public void setId(String id) {
+	    this.id = id;
 	}
-	public String getChangeitemPrice() {
-		return changeitemPrice;
+	public String getItemName() {
+		return itemName;
 	}
-	public void setChangeitemPrice(String changeitemPrice) {
-		this.changeitemPrice = changeitemPrice;
+	public void setItemName(String itemName) {
+	    this.itemName = itemName;
 	}
-	public String getChangeitemStock() {
-		return changeitemStock;
+	public String getItemPrice() {
+		return itemPrice;
 	}
-	public void setChangeitemStock(String changeitemStock) {
-		this.changeitemStock = changeitemStock;
+	public void setItemPrice(String itemPrice) {
+		this.itemPrice = itemPrice;
+	}
+	public String getItemStock() {
+		return itemStock;
+	}
+	public void setItemStock(String itemStock) {
+		this.itemStock = itemStock;
 	}
 	public void setSession(Map<String, Object> session) {
 		this.session = session;

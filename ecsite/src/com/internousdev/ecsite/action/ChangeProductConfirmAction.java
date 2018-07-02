@@ -1,65 +1,76 @@
 package com.internousdev.ecsite.action;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.ecsite.dao.ChangeProductConfirmDAO;
 import com.internousdev.ecsite.dto.ChangeProductConfirmDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ChangeProductConfirmAction extends ActionSupport implements SessionAware{
-	public Map<String,Object>session;
-	private ChangeProductConfirmDAO changeProductConfirmDAO=new ChangeProductConfirmDAO();
-	private ArrayList<ChangeProductConfirmDTO>productList=new ArrayList<ChangeProductConfirmDTO>();
-	private String deleteFlg;
-	private String message;
+	private List<ChangeProductConfirmDTO> ChangeProductDtoList = new ArrayList<ChangeProductConfirmDTO>();
+	private String id;
+	private String itemName;
+	private String itemPrice;
+	private String itemStock;
 
-	public String execute() throws SQLException {
-		if (!session.containsKey("id")) {
-			return ERROR;
-		}
-		if(deleteFlg == null) {
-			String id = session.get("id").toString();
-			String itemname = session.get("item_name").toString();
-			String itemprice = session.get("item_price").toString();
-			String itemstock = session.get("item_stock").toString();
-			productList = changeProductConfirmDAO.getProductInfo();
-		} else if(deleteFlg.equals("1")) {
-			delete();
-		}
+	private Map<String, Object> session;
+	public String execute() {
 		String result = SUCCESS;
-			return result;
-		}
-	public void delete() throws SQLException {
-		String id = session.get("id").toString();
-		String itemname = session.get("item_name").toString();
-		String itemprice = session.get("item_price").toString();
-		String itemstock = session.get("item_stock").toString();
+		ChangeProductConfirmDTO changeProductConfirmDTO = new ChangeProductConfirmDTO();
+		session.put("itemName", changeProductConfirmDTO.getItemName());
+		session.put("itemPrice", changeProductConfirmDTO.getItemPrice());
+		session.put("itemStock", changeProductConfirmDTO.getItemStock());
 
-		int res = changeProductConfirmDAO.ProductDelete(id, itemname, itemprice, itemstock);
-	if(res > 0) {
-		productList = null;
-		setMessage("商品情報を正しく削除しました。");
-		} else if(res == 0) {
-		setMessage("商品情報の削除に失敗しました");
+
+		List<Integer> productList = new ArrayList<Integer>(Arrays.asList(1,2,3,4));
+		session.put("productList", productList);
+
+		Iterator<ChangeProductConfirmDTO> iterator = ChangeProductDtoList.iterator();
+		if(!(iterator.hasNext())) {
+			productList = null;
 		}
-		}
-	public void setDeleteFlg(String deleteFlg) {
-		this.deleteFlg = deleteFlg;
+		return result;
+	}
+
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getItemName() {
+		return itemName;
+	}
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+	public String getItemPrice() {
+		return itemPrice;
+	}
+	public void setItemPrice(String itemPrice) {
+		this.itemPrice = itemPrice;
+	}
+	public String getItemStock() {
+		return itemStock;
+	}
+	public void setItemStock(String itemStock) {
+		this.itemStock = itemStock;
+	}
+	public List<ChangeProductConfirmDTO> getChangeProductDtoList() {
+		return ChangeProductDtoList;
+	}
+	public void setChangeProductDtoList(List<ChangeProductConfirmDTO> ChangeProductDtoList) {
+		this.ChangeProductDtoList =ChangeProductDtoList;
+	}
+	public Map<String, Object> getSession() {
+		return session;
 	}
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
-	}
-	public ArrayList<ChangeProductConfirmDTO> getProductList() {
-		return this.productList;
-	}
-	public String getMessage() {
-		return this.message;
-	}
-	public void setMessage(String message) {
-		this.message = message;
 	}
 }

@@ -1,4 +1,4 @@
-	package com.internousdev.ecsite.dao;
+package com.internousdev.ecsite.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,18 +6,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.internousdev.ecsite.dto.ChangeProductConfirmDTO;
+import com.internousdev.ecsite.dto.ChangeCustomerConfirmDTO;
 import com.internousdev.ecsite.util.DBConnector;
 
-public class ChangeProductConfirmDAO {
+public class ChangeCustomerConfirmDAO {
 	private DBConnector dbConnector = new DBConnector();
 	private Connection connection = dbConnector.getConnection();
 
-	public ArrayList<ChangeProductConfirmDTO> getProductInfo
+	public ArrayList<ChangeCustomerConfirmDTO> getCustomerInfo
 
 	() throws SQLException {
-	ArrayList<ChangeProductConfirmDTO> changeProductConfirmDTO = new ArrayList<ChangeProductConfirmDTO>();
-	String sql ="select * from item_info_transaction";
+	ArrayList<ChangeCustomerConfirmDTO> changeCustomerConfirmDTO = new ArrayList<ChangeCustomerConfirmDTO>();
+	String sql ="select * from login_user_transaction";
 
 	try {
 
@@ -27,14 +27,14 @@ public class ChangeProductConfirmDAO {
 		while(resultSet.next()) {
 
 			//取得したものをDTOに格納し、そのDTOをArrayListに格納
-		ChangeProductConfirmDTO dto = new ChangeProductConfirmDTO();
+		ChangeCustomerConfirmDTO dto = new ChangeCustomerConfirmDTO();
 		dto.setId(resultSet.getString("id"));
-		dto.setItemName(resultSet.getString("item_name"));
-		dto.setItemPrice(resultSet.getString("item_price"));
-		dto.setItemStock(resultSet.getString("item_stock"));
+		dto.setLoginId(resultSet.getString("login_id"));
+		dto.setLoginPass(resultSet.getString("login_pass"));
+		dto.setUserName(resultSet.getString("user_name"));
 		dto.setInsert_date(resultSet.getString("insert_date"));
 		dto.setUpdate_date(resultSet.getString("update_date"));
-		changeProductConfirmDTO.add(dto);
+		changeCustomerConfirmDTO.add(dto);
 	}
 	} catch(Exception e) {
 
@@ -43,21 +43,21 @@ public class ChangeProductConfirmDAO {
 		connection.close();
 
 		}
-		return changeProductConfirmDTO;
+		return changeCustomerConfirmDTO;
 
 		}
 //↓DBから購入履歴を削除するメソッド
-		public int ProductDelete
-		(String id, String itemname, String itemprice, String itemstock) throws SQLException {
-			String sql ="DELETE FROM item_info_transaction WHERE iid = ? AND item_name=? AND item_price=? AND item_stock=? = ?";
+		public int CustomerDelete
+		(String id, String loginid, String loginpass, String username) throws SQLException {
+			String sql ="DELETE FROM login_user_transaction WHERE iid = ? AND login_id=? AND login_pass=? AND user_name=? = ?";
 					PreparedStatement preparedStatement;
 				int result =0;
 				try {
 					preparedStatement = connection.prepareStatement(sql);
 					preparedStatement.setString(1, id);
-					preparedStatement.setString(2, itemname);
-					preparedStatement.setString(3, itemprice);
-					preparedStatement.setString(4, itemstock);
+					preparedStatement.setString(2, loginid);
+					preparedStatement.setString(3, loginpass);
+					preparedStatement.setString(4, username);
 					result = preparedStatement.executeUpdate();
 				} catch (SQLException e) {
 						e.printStackTrace();

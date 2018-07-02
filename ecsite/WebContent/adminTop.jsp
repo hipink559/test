@@ -64,7 +64,7 @@ pageEncoding="UTF-8"%>
 
 	<br>
 	<h3>ユーザーに関する項目</h3>
-	<p>ユーザー情報の編集は<a href='<s:url action="ChangeCostomerAction" />'>こちら</a></p>
+	<p>ユーザー情報の編集は<a href='<s:url action="ChangeCustomerAction" />'>こちら</a></p>
 
 	<br>
 	<p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a></p>

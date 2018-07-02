@@ -69,9 +69,22 @@
 	<result name="success">changeProduct.jsp</result>
 </action>
 
-<action name="ChangeCostomerAction" class="com.internousdev.ecsite.action.ChangeCostomerAction" method="execute">
-	<result name="success">changeCostomer.jsp</result>
+<action name="ChangeProductInfoAction" class="com.internousdev.ecsite.action.ChangeProductInfoAction" method="execute">
+	<result name="success">changeProductInfo.jsp</result>
 </action>
+
+<action name="ChangeProductConfirmAction" class="com.internousdev.ecsite.action.ChangeProductConfirmAction" method="execute">
+	<result name="success">changeProductConfirm.jsp</result>
+</action>
+
+<action name="ChangeProductCompleteAction" class="com.internousdev.ecsite.action.ChangeProductCompleteAction" method="execute">
+	<result name="success">changeproductComplete.jsp</result>
+</action>
+
+<action name="ChangeCustomerAction" class="com.internousdev.ecsite.action.ChangeCustomerAction" method="execute">
+	<result name="success">changeCustomer.jsp</result>
+</action>
+
 
 
 </package>

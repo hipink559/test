@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>MyPage</title>
+<title>ChangeCostomer</title>
 <style type="text/css">
 	body {
 		margin:0;
@@ -53,44 +53,50 @@
 	<div id="header"></div>
 	<div id="main">
 		<div id="top">
-			<p>MyPage</p>
+			<p>Change Costomer</p>
 		</div>
 
-		<s:if test="myPageList==null">
-			<h3>購入情報はありません</h3>
+		<s:if test="customerList==null">
+			<h3>顧客情報はありません</h3>
 		</s:if>
 		<s:elseif test="message==null">
-			<h3>購入情報は以下になります</h3>
+			<h3>顧客情報は以下になります</h3>
 			<table border="1">
 			<tr>
-				<th>品名</th>
-				<th>値段</th>
-				<th>購入個数</th>
-				<th>支払い方法</th>
-				<th>購入日</th>
+				<th>No</th>
+				<th>LoginID</th>
+				<th>Password</th>
+				<th>UserName</th>
+				<th>編集</th>
+
+
 			</tr>
 
-			<s:iterator value="myPageList">
+			<s:iterator value="customerList">
+
 				<tr>
-					<td><s:property value="itemName" /></td>
-					<td><s:property value="totalPrice" /><span>円</span></td>
-					<td><s:property value="totalCount" /><span>個</span></td>
-					<td><s:property value="payment" /></td>
-					<td><s:property value="insert_date" /></td>
+					<td><s:property value="id" /></td>
+					<td><s:property value="loginId" /><span></span></td>
+					<td><s:property value="loginPass" /><span></span></td>
+					<td><s:property value="userName" /></td>
+					<td><s:form action="ChangeCustomerInfoAction">
+					<input type="hidden" name=" update" value="1">
+					<s:submit value="編集" method=" update" /></s:form></td>
+
+
+
 				</tr>
+
 				</s:iterator>
 			</table>
-				<s:form action="MyPageAction">
-					<input type="hidden" name="deleteFlg" value="1">
-					<s:submit value="削除" method="delete" />
-				</s:form>
+
 		</s:elseif>
 		<s:if test="message != null">
 			<h3><s:property value="message"/></h3>
 		</s:if>
 
 		<div id="text-right">
-			<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
+
 			<p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a></p>
 		</div>
 	</div>
