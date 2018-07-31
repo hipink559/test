@@ -1,0 +1,95 @@
+@CHARSET "UTF-8";
+
+/* purchaseHistory */
+
+.hanabiB{
+	background-image: url("../images/hanabiD.jpg");
+	background-size: cover;
+	background-attachment:fixed;
+	padding-bottom: 100px;
+	height: auto !important;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.purchaseHistory-main{
+	margin:50px auto 0;
+	background-color:rgba(255, 255, 255, 0.5);
+	border-radius:50px;
+	padding:20px;
+	margin-bottom:60px;
+	max-width:40%;
+    min-width: 600px;
+	text-align:center;
+}
+
+.tablearea{
+	text-align:center;
+	padding-left:60px;
+}
+
+.purchaseHistory-left {
+    display: inline-block;
+	float:left;
+	width:30%;
+	text-align:center;
+	margin-bottom:30px;
+}
+
+.purchaseHistory-left img {
+	width:80%;
+	height:80%;
+	border-radius:20px;
+}
+
+.purchaseHistory-right {
+	float:left;
+	width:70%;
+	margin-bottom:30px;
+	padding-top: 20px;
+}
+
+.tablearea table{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.purchaseHistory-right th {
+    width: 150px;
+    text-align: right;
+}
+
+.purchaseHistory-right  td {
+    width: 350px;
+    text-align: left;
+}
+
+
+.purchaseHistory-btn {
+    display: inline-block;
+    margin: 20px;
+}
+
+.back{
+	width:70px;
+	height:30px;
+	border-radius:7px;
+	filter: hue-rotate(90deg);
+}
+
+.back:hover{
+	filter: opacity(50%) drop-shadow(0px 0px 5px #fff) hue-rotate(90deg);
+}
+
+.submit{
+	width:70px;
+	height:30px;
+	border-radius:7px;
+}
+
+.submit:hover{
+	filter: opacity(50%) drop-shadow(0px 0px 5px #fff);
+}
+

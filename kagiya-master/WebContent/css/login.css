@@ -1,0 +1,85 @@
+
+body {
+	background-image: url("../images/hanabiD.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+
+#main {
+	text-align:center;
+	width:60%;
+	color: black;
+	margin:50px auto 70px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius:40px;
+	padding:10px 20px;
+	min-width:600px;
+}
+
+#table{
+	display: inline-block;
+}
+
+
+.btn{
+display: inline-block;
+padding: 0.3em 1em;
+/* text-decoration: none; */
+color :#ffffff;
+/* border: solid 1px #ffd700; */
+/* border-radius: 3px; */
+transition: .4s;
+background: #192f60;
+/* background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%); */
+}
+
+
+.btn:hover {
+background: #FFF200;
+color: :#ffffff;
+border: solid 1px #FFF200;
+}
+
+.idcheck{
+font-size:16px;
+}
+
+.error {
+	color: red;
+	text-align:left;
+}
+
+.submit{
+	width:85px;
+	height:30px;
+	border-radius:7px;
+
+}
+
+.submit:hover{
+	filter: opacity(50%) drop-shadow(0px 0px 5px #fff);
+
+}
+
+.back{
+	width:70px;
+	height:30px;
+	border-radius:7px;
+	filter: hue-rotate(90deg);
+}
+
+.back:hover{
+	filter: opacity(50%) drop-shadow(0px 0px 5px #fff) hue-rotate(90deg);
+
+}
+
+.resetpass{
+	width:140px;
+	height:30px;
+	border-radius:7px;
+}
+
+.resetpass:hover{
+	filter: opacity(50%) drop-shadow(0px 0px 5px #fff);
+}

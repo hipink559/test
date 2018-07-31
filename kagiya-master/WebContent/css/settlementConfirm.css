@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+body {
+	background-image: url("../images/hanabiD.jpg");
+	background-size: cover;
+	background-attachment:fixed;
+	height: auto !important;
+	padding-bottom: 60px !important;
+}
+
+#contents {
+	margin:50px auto 0;
+	background-color:rgba(255, 255, 255, 0.5);
+	border-radius:50px;
+	width:60%;
+	padding:20px;
+	margin-bottom:60px;
+	min-width: 600px;
+	text-align:center;
+}
+
+.top h1{
+		text-align:center;
+}
+
+.info {
+	text-align:center;
+	margin-bottom:20px;
+}
+
+.horizontal-list-table {
+	margin:0 auto;
+}
+
+.horizontal-list-table table {
+	margin-bottom:30px;
+}
+
+.horizontal-list-table table th{
+	text-align:right;
+}
+
+.horizontal-list-table table td{
+	text-align:left;
+}
+
+.radio{
+	-webkit-transform: scale(2);
+	transform: scale(2);
+}
+
+.submit_btn_box {
+	text-align: center;
+	margin-top:20px;
+}
+
+.submit {
+	width: 85px;
+	height: 30px;
+	border-radius: 7px;
+}
+
+.submit:hover {
+	filter: opacity(50%) drop-shadow(0px 0px 5px #fff);
+}
+
+.back {
+	width: 70px;
+	height: 30px;
+	border-radius: 7px;
+	filter: hue-rotate(90deg);
+}
+
+.back:hover {
+	filter: opacity(50%) drop-shadow(0px 0px 5px #fff) hue-rotate(90deg);
+}
+
+.resetpass {
+	width: 140px;
+	height: 30px;
+	border-radius: 7px;
+}
+
+.resetpass:hover {
+	filter: opacity(50%) drop-shadow(0px 0px 5px #fff);
+}

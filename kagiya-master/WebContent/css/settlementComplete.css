@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+body {
+	background-image: url("../images/hanabiD.jpg");
+	background-size: cover;
+	background-attachment:fixed;
+}
+
+#contents {
+	margin:50px auto 0;
+	background-color:rgba(255, 255, 255, 0.5);
+	border-radius:50px;
+	width:60%;
+	padding:20px;
+	margin-bottom:60px;
+	text-align:center;
+	min-width:600px;
+
+
+}

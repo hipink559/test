@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+.createUser {
+	margin:50px auto 0;
+	background-color:rgba(255, 255, 255, 0.5);
+	border-radius:50px;
+	width:60%;
+	padding:20px;
+	margin-bottom:60px;
+	min-width: 885px;
+}
+
+.tag{
+	text-align: left;
+	margin: 10px 0px;
+	padding:15px 10px 15px 10px;
+	width:100px;
+}
+
+.createUser h1 {
+	text-align:center;
+}
+
+.createUser-table {
+	margin:0 auto;
+}
+
+.createUser table th {
+	text-align:right;
+	width:8em;
+}
+
+.error-message {
+	color : red;
+}
+
+body, html {
+	margin : 0; /* 余白の削除 */
+	padding : 0; /* 余白の削除 */
+	width : 100%;
+}
+
+body {
+	background-image:url("../images/hanabiD.jpg");
+	background-size:cover;
+	background-attachment:fixed;
+	min-height: 100%;
+	height: auto !important;
+}
+
+.createUserComplete{
+	margin:50px auto 0;
+	background-color:rgba(255, 255, 255, 0.5);
+	border-radius:50px;
+	width:60%;
+	padding:20px;
+	margin-bottom:60px;
+	text-align:center;
+	min-width: 885px;
+}
+
+.submit_box {
+	text-align: center;
+}
+
+.submit_btn_box1, .submit_btn_box2 {
+    display: inline-block;
+}
+
+.submit_btn_box1{
+	clear:both;
+	padding-top:30px;
+}
+
+.submit_btn_box1 + .submit_btn_box1 {
+	margin-left:30px;
+}
+
+.submit{
+	width:70px;
+	height:30px;
+	border-radius:7px;
+
+}
+
+.submit:hover{
+	filter: opacity(50%) drop-shadow(0px 0px 5px #fff);
+
+}
+
+.back{
+	width:70px;
+	height:30px;
+	border-radius:7px;
+	filter: hue-rotate(90deg);
+}
+
+.back:hover{
+	filter: opacity(50%) drop-shadow(0px 0px 5px #fff) hue-rotate(90deg);
+
+}
+
+.clearfix {
+	clear: both;
+}
